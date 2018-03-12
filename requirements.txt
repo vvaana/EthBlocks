@@ -4,3 +4,4 @@ requests==2.4.3
 psycopg2==2.7.4
 gunicorn==19.7.1
 whitenoise==4.0b4
+django-heroku
