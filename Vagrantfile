@@ -73,7 +73,8 @@ Vagrant.configure("2") do |config|
   # SHELL
    config.vm.provision :shell do |shell|
     shell.inline = <<-SHELL
-      export PATH=~/home/dev/src:$PATH
+      export PATH=~/home/dev/src/EthBlocksProject:$PATH
+      export PYTHONPATH=./EthBlocksProject:$PYTHONPATH
 	  sudo apt-get update
 	  sudo apt-get dist-upgrade
 	  python3 -V
