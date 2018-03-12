@@ -1,0 +1,35 @@
+{% extends 'EthBlocks/index.html' %}
+{% block 'ethBlocks' %}
+{% load staticfiles %}
+	<!-- Content 2 -->
+
+     <section class="content content-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                	<h2 class>Block Hash</h2>
+                	<p class="lead text-light">{{hash}}</p>
+					<h2>Height</h2>
+					<p class="text-light">{{height}}</p>
+					<h2>Number of transactions</h2>
+					<p class="text-light">{{n_tx}}</p>
+					<h2>Recieved time:</h2>
+					<p class="text-light">{{received_time}}</p>
+                    <h2>Previous block hash:</h2>
+					<p class="text-light">{{prev_block}}</p>
+                    <h2>Next block hash:</h2>
+					<p class="text-light">{{next_block}}</p>
+                    <a href="/{{prev_block}}" class="btn btn-secondary btn-lg" role="button">Previous block</a>
+                    <a href="/{{next_block}}" class="btn btn-secondary btn-lg {%if next_block == None%} disabled{% endif%}" role="button" aria-disabled="{%if next_block == None%} true {%else%} true{% endif%}">Next block</a>
+                    <a href="/" class="btn btn-secondary btn-lg" role="button">Latest</a>
+
+                </div>
+                <!--<div class="col-sm-6">-->
+                    <!--<img class="img-responsive img-circle center-block" src="{% static "images/eth_logo.jpg" %}" alt="">-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </section>
+            </div></div>
+{% endblock %}
