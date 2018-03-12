@@ -27,6 +27,7 @@ before_script:
   # Uncomment next line if your Django app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
   - pip3 install -r ./src/requirements.txt
+  - export PATH=~/home/dev/src:$PATH
   - export PYTHONPATH=./src:$PYTHONPATH
 
 # To get Django tests to work you may need to create a settings file using
@@ -54,5 +55,7 @@ before_script:
 production:
   type: deploy
   script:
+  - cd ./src
+  - ls
   - django-admin runserver --settings=EthBlocksProject.settings
 
