@@ -26,9 +26,9 @@ before_script:
   - ls
   # Uncomment next line if your Django app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
-  - pip3 install -r ./src/requirements.txt
-  - export PATH=~/home/dev/src/EthBlocksProject:$PATH
-  - export PYTHONPATH=./EthBlocksProject:$PYTHONPATH
+#  - pip3 install -r ./src/requirements.txt
+#  - export PATH=~/home/dev/src/EthBlocksProject:$PATH
+#  - export PYTHONPATH=./EthBlocksProject:$PYTHONPATH
 
 # To get Django tests to work you may need to create a settings file using
 # the following DATABASES:
@@ -52,10 +52,20 @@ before_script:
 #  script:
 #  - python manage.py test
 
+#production:
+#  type: deploy
+#  script:
+#  - cd ./src
+#  - ls
+#  - django-admin runserver --settings=EthBlocksProject.settings
+#
+
 production:
   type: deploy
   script:
-  - cd ./src
-  - ls
-  - django-admin runserver --settings=EthBlocksProject.settings
-
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --app=gitlab-ci-python-test-prod --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+  - tags

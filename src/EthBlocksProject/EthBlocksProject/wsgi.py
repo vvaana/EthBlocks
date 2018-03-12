@@ -20,3 +20,6 @@ if path not in sys.path:
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "EthBlocksProject.settings")
 
 application = get_wsgi_application()
+
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
