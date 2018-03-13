@@ -19,6 +19,5 @@ tests/.coverage
 build/
 tests/report/
 db.sqlite3
-myvenv
+my_env
 __pycache__
-local_settings.py
