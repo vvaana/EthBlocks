@@ -20,6 +20,3 @@
 	  python manage.py runserver 0:8000
 ## Open browser and go to.
       localhost:8000
-
-
-sudo chmod 666 db.sqlite3
