@@ -18,7 +18,6 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 print(STATIC_DIR)
 
 # Quick-start development settings - unsuitable for production
@@ -28,9 +27,9 @@ print(STATIC_DIR)
 SECRET_KEY = 'qd8y$6cj#k0nbsh(_#j*3x8c86owry-$5nwc7##fq8viubyz0k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition

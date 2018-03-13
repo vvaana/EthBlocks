@@ -17,9 +17,9 @@ path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if path not in sys.path:
     sys.path.append(path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "EthBlocksProject.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "EthBlocksProject.settings_local")
 
 application = get_wsgi_application()
 
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)
+# from whitenoise.django import DjangoWhiteNoise
+# application = DjangoWhiteNoise(application)

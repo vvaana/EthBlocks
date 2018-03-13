@@ -18,6 +18,7 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 print(STATIC_DIR)
 
 # Quick-start development settings - unsuitable for production
@@ -27,9 +28,9 @@ print(STATIC_DIR)
 SECRET_KEY = 'qd8y$6cj#k0nbsh(_#j*3x8c86owry-$5nwc7##fq8viubyz0k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -81,8 +82,12 @@ WSGI_APPLICATION = 'EthBlocksProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'EthBlocks',
+        'USER': 'vagrant',
+        'PASSWORD': 'vagrant1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -163,3 +168,8 @@ LOGGING = {
         },
     },
 }
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+django_heroku.settings(locals())
