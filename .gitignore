@@ -19,4 +19,5 @@ tests/.coverage
 build/
 tests/report/
 my_env
+db.sqlite3
 __pycache__
