@@ -732,7 +732,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .slider {
-  /*background: url("../images/slider-bg.jpg") no-repeat;*/
   background-size: cover;
   background-attachment: fixed;
   background-position: 10% 0%;
@@ -857,7 +856,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .feature {
-  background: url("../img/featue-bg.jpg");
   background-position: 50% 94px;
   display: block;
   position: relative;
@@ -2105,14 +2103,12 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .bg-1 {
-  /*background-image: url("../images/call-to-action-bg.jpg");*/
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .bg-2 {
-  /*background: url("../images/featue-bg.jpg");*/
   background-size: cover;
   background-attachment: fixed;
 }
@@ -2292,7 +2288,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .coming-soon {
-  /*background: url("../images/backgrounds/coming-soon.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
